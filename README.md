@@ -1,0 +1,1618 @@
+## Hi there 👋
+
+<!--
+**StacyN50/StacyN50** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+Here are some ideas to get you started:
+
+- 🔭 I’m currently working on ...
+- 🌱 I’m currently learning ...
+- 👯 I’m looking to collaborate on ...
+- 🤔 I’m looking for help with ...
+- 💬 Ask me about ...
+- 📫 How to reach me: ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+-->
+
+<!DOCTYPE html>
+<html lang="en" class="h-full w-full">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Stacy Nafula Portfolio</title>
+
+    <!-- SDK -->
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="/_sdk/data_sdk.js"></script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+    <!-- Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+    <!-- Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+    </style>
+
+    <!-- Global Styles -->
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        body {
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .app-shell {
+            min-height: 100%;
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            position: relative;
+        }
+
+        .noise-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.08;
+            z-index: 1;
+
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,.8) 0 1px, transparent 1px),
+                radial-gradient(circle at 80% 60%, rgba(255,255,255,.5) 0 1px, transparent 1px);
+
+            background-size: 34px 34px, 48px 48px;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(18px);
+            opacity: 0.75;
+            animation: floatIn 1.1s ease both;
+        }
+
+        .orb-one {
+            width: 260px;
+            height: 260px;
+            top: 6%;
+            right: 8%;
+            animation-delay: 0.15s;
+        }
+
+        .orb-two {
+            width: 180px;
+            height: 180px;
+            bottom: 10%;
+            left: 6%;
+            animation-delay: 0.25s;
+        }
+
+        .grid-glow {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+
+            background-size: 52px 52px;
+
+            mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
+        }
+
+        .glass-card {
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            box-shadow: 0 28px 70px rgba(10, 23, 18, 0.22);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            animation: revealUp 0.8s cubic-bezier(.2,.8,.2,1) forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+
+        .portrait-mark {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .portrait-mark::before {
+            content: "";
+            position: absolute;
+            inset: -10px;
+            border-radius: 999px;
+
+            background: conic-gradient(
+                from 120deg,
+                var(--primary-action),
+                transparent,
+                var(--secondary-action),
+                var(--primary-action)
+            );
+
+            z-index: -1;
+            animation: slowSpin 12s linear infinite;
+        }
+
+        .magnetic-button {
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                opacity 0.25s ease;
+        }
+
+        .magnetic-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .skill-chip {
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .skill-chip:hover {
+            transform: translateY(-2px);
+        }
+
+        @keyframes revealUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: scale(0.86);
+            }
+
+            to {
+                opacity: 0.75;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slowSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .orb-one {
+                width: 170px;
+                height: 170px;
+                top: 3%;
+                right: -12%;
+            }
+
+            .orb-two {
+                width: 140px;
+                height: 140px;
+                bottom: 4%;
+                left: -12%;
+            }
+        }
+    </style>
+</head>
+
+<body class="h-full w-full">
+
+    <div id="app" class="app-shell">
+
+        <!-- Decorative Layers -->
+        <div class="noise-layer"></div>
+        <div class="grid-glow"></div>
+
+        <div id="orbOne" class="orb orb-one"></div>
+        <div id="orbTwo" class="orb orb-two"></div>
+
+        <!-- HEADER -->
+        <header class="relative z-10 w-full">
+
+            <nav
+                class="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10"
+                aria-label="Portfolio navigation"
+            >
+
+                <!-- Brand -->
+                <a
+                    href="#top"
+                    class="flex items-center gap-3 rounded-full focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-offset-transparent"
+                >
+                    <span
+                        id="brandInitials"
+                        class="flex h-11 w-11 items-center justify-center rounded-full text-sm font-extrabold shadow-lg"
+                    >
+                        SN
+                    </span>
+
+                    <span
+                        id="brandName"
+                        class="font-bold tracking-wide"
+                    >
+                        Stacy Nafula
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden items-center gap-6 md:flex">
+
+                    <a href="#about" class="nav-link text-sm font-semibold opacity-80 transition hover:opacity-100">
+                        About
+                    </a>
+
+                    <a href="#skills" class="nav-link text-sm font-semibold opacity-80 transition hover:opacity-100">
+                        Skills
+                    </a>
+
+                    <a href="#experience" class="nav-link text-sm font-semibold opacity-80 transition hover:opacity-100">
+                        Experience
+                    </a>
+
+                    <a href="#contact" class="nav-link text-sm font-semibold opacity-80 transition hover:opacity-100">
+                        Contact
+                    </a>
+
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button
+                    id="menuButton"
+                    type="button"
+                    class="rounded-full p-3 shadow-sm transition md:hidden focus:outline-none focus:ring-4"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <i data-lucide="menu" class="h-5 w-5"></i>
+                </button>
+
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div
+                id="mobileMenu"
+                class="mx-5 hidden rounded-3xl p-4 shadow-xl md:hidden"
+            >
+                <div class="grid gap-2">
+
+                    <a href="#about" class="mobile-nav rounded-2xl px-4 py-3 font-semibold">
+                        About
+                    </a>
+
+                    <a href="#skills" class="mobile-nav rounded-2xl px-4 py-3 font-semibold">
+                        Skills
+                    </a>
+
+                    <a href="#experience" class="mobile-nav rounded-2xl px-4 py-3 font-semibold">
+                        Experience
+                    </a>
+
+                    <a href="#contact" class="mobile-nav rounded-2xl px-4 py-3 font-semibold">
+                        Contact
+                    </a>
+
+                </div>
+            </div>
+
+        </header>
+
+        <!-- MAIN -->
+        <main
+            id="top"
+            class="relative z-10 mx-auto w-full max-w-7xl px-5 pb-10 pt-4 sm:px-8 lg:px-10"
+        >
+
+            <!-- HERO -->
+            <section
+                class="grid items-center gap-8 py-8 lg:grid-cols-[1.08fr_.92fr] lg:py-14"
+                aria-labelledby="heroTitle"
+            >
+
+                <!-- Hero Content -->
+                <div class="reveal delay-1">
+
+                    <p
+                        id="eyebrowText"
+                        class="mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold tracking-wide shadow-sm"
+                    >
+                        <i data-lucide="sparkles" class="h-4 w-4"></i>
+                        Portfolio
+                    </p>
+
+                    <h1
+                        id="heroTitle"
+                        class="max-w-4xl leading-[0.95] tracking-tight"
+                    >
+                        Stacy Nafula
+                    </h1>
+
+                    <p
+                        id="roleText"
+                        class="mt-5 max-w-2xl font-bold tracking-tight"
+                    >
+                        Software Engineer & Database Assistant
+                    </p>
+
+                    <p
+                        id="heroSummary"
+                        class="mt-5 max-w-2xl leading-8 opacity-85"
+                    >
+                        I am a technology professional specializing in database management, with expertise in PL/SQL, Oracle SQL, Advanced MS Excel, and data systems optimization. My work is centered on building reliable, secure, and scalable solutions that support business operations effectively. I have hands-on experience across the complete database lifecycle, including installation, configuration, upgrades, backup management, and disaster recovery processes.
+
+My background includes supporting high-availability environments and business continuity initiatives, while ensuring incidents are resolved within established SLA timelines. I have contributed to performance improvement efforts through query optimization, indexing strategies, and system tuning. In addition, I work closely with cross-functional teams to maintain production systems, implement automation processes, and strengthen security controls and best practices. I am passionate about continuous professional growth and committed to delivering resilient, high-performing data solutions that create measurable business impact.
+
+                    </p>
+
+                    <!-- Hero Buttons -->
+                    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+
+                        <a
+                            id="primaryButton"
+                            href="#experience"
+                            class="magnetic-button inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 font-extrabold shadow-xl focus:outline-none focus:ring-4"
+                        >
+                            <span id="primaryButtonText">View Work</span>
+
+                            <i data-lucide="arrow-right" class="h-5 w-5"></i>
+                        </a>
+
+                        <a
+                            id="secondaryButton"
+                            href="#contact"
+                            class="magnetic-button inline-flex items-center justify-center gap-2 rounded-full border px-6 py-4 font-extrabold focus:outline-none focus:ring-4"
+                        >
+                            <span id="secondaryButtonText">Contact Stacy</span>
+
+                            <i data-lucide="mail" class="h-5 w-5"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Profile Card -->
+                <aside
+                    class="reveal delay-2"
+                    aria-label="Portfolio profile snapshot"
+                >
+
+                    <div
+                        id="heroCard"
+                        class="glass-card rounded-[2rem] border p-6 sm:p-8"
+                    >
+
+                        <div class="flex flex-col items-center text-center">
+
+                            <div
+                                id="portraitMark"
+                                class="portrait-mark mb-6 flex h-36 w-36 items-center justify-center rounded-full text-5xl font-black shadow-2xl sm:h-44 sm:w-44 sm:text-6xl"
+                            >
+                                SN
+                            </div>
+
+                            <h2
+                                id="cardName"
+                                class="text-2xl font-black"
+                            >
+                                Stacy Nafula
+                            </h2>
+
+                            <p
+                                id="cardRole"
+                                class="mt-2 font-semibold opacity-75"
+                            >
+                               Software Engineer & Database Assistant
+                            </p>
+
+                            <!-- Stats -->
+                            <div class="mt-7 grid w-full grid-cols-3 gap-3">
+
+                                <div class="stat-card rounded-3xl p-4">
+                                    <p class="stat-number text-2xl font-black">01</p>
+
+                                    <p class="stat-label mt-1 text-xs font-bold uppercase tracking-wider opacity-70">
+                                        Profile
+                                    </p>
+                                </div>
+
+                                <div class="stat-card rounded-3xl p-4">
+                                    <p class="stat-number text-2xl font-black">13</p>
+
+                                    <p class="stat-label mt-1 text-xs font-bold uppercase tracking-wider opacity-70">
+                                        Skills
+                                    </p>
+                                </div>
+
+                                <div class="stat-card rounded-3xl p-4">
+                                    <p class="stat-number text-2xl font-black">∞</p>
+
+                                    <p class="stat-label mt-1 text-xs font-bold uppercase tracking-wider opacity-70">
+                                        Growth
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </section>
+
+            <!-- ABOUT -->
+            <section
+                id="about"
+                class="reveal delay-3 py-8"
+                aria-labelledby="aboutTitle"
+            >
+
+                <div
+                    id="aboutCard"
+                    class="glass-card rounded-[2rem] border p-6 sm:p-8 lg:p-10"
+                >
+
+                    <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
+
+                        <div>
+                            <p class="section-kicker mb-3 text-sm font-black uppercase tracking-[0.2em]">
+                                Profile
+                            </p>
+
+                            <h2
+                                id="aboutTitle"
+                                class="leading-tight"
+                            >
+                                About Stacy
+                            </h2>
+                        </div>
+
+                        <div>
+                            <p
+                                id="aboutText"
+                                class="leading-8 opacity-85"
+                            >
+                                This section is ready for Stacy’s real biography,
+                                career focus, and professional values.
+                                Add details from LinkedIn such as her industry,
+                                experience, education, certifications,
+                                and the kind of opportunities she is seeking.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- SKILLS -->
+            <section
+                id="skills"
+                class="reveal delay-4 py-8"
+                aria-labelledby="skillsTitle"
+            >
+
+                <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+
+                    <div>
+                        <p class="section-kicker mb-3 text-sm font-black uppercase tracking-[0.2em]">
+                            Capabilities
+                        </p>
+
+                        <h2
+                            id="skillsTitle"
+                            class="leading-tight"
+                        >
+                            Core Strengths
+                        </h2>
+                    </div>
+
+                    <p class="max-w-md text-sm font-semibold opacity-70">
+                        Highlight the areas Stacy wants recruiters,
+                        clients, or collaborators to remember first.
+                    </p>
+
+                </div>
+
+                <!-- Skill Cards -->
+                <div class="grid gap-4 md:grid-cols-3">
+
+                    <!-- Skill 1 -->
+                    <article class="skill-chip glass-card rounded-[1.75rem] border p-6">
+
+                        <div class="skill-icon mb-5 flex h-12 w-12 items-center justify-center rounded-2xl">
+                            <i data-lucide="clipboard-check" class="h-6 w-6"></i>
+                        </div>
+
+                        <h3 id="skillOne" class="text-xl font-black">
+                            Project Coordination
+                        </h3>
+
+                        <p class="mt-3 leading-7 opacity-75">
+                            Organized, practical, and focused on moving work forward with clarity.
+                        </p>
+
+                    </article>
+
+                    <!-- Skill 2 -->
+                    <article class="skill-chip glass-card rounded-[1.75rem] border p-6">
+
+                        <div class="skill-icon mb-5 flex h-12 w-12 items-center justify-center rounded-2xl">
+                            <i data-lucide="messages-square" class="h-6 w-6"></i>
+                        </div>
+
+                        <h3 id="skillTwo" class="text-xl font-black">
+                            Communication
+                        </h3>
+
+                        <p class="mt-3 leading-7 opacity-75">
+                            Clear messaging, confident collaboration,
+                            and thoughtful stakeholder updates.
+                        </p>
+
+                    </article>
+
+                    <!-- Skill 3 -->
+                    <article class="skill-chip glass-card rounded-[1.75rem] border p-6">
+
+                        <div class="skill-icon mb-5 flex h-12 w-12 items-center justify-center rounded-2xl">
+                            <i data-lucide="line-chart" class="h-6 w-6"></i>
+                        </div>
+
+                        <h3 id="skillThree" class="text-xl font-black">
+                            Digital Strategy
+                        </h3>
+
+                        <p class="mt-3 leading-7 opacity-75">
+                            A modern approach to tools, systems,
+                            content, and professional visibility.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section
+                id="experience"
+                class="reveal delay-5 py-8"
+                aria-labelledby="experienceTitle"
+            >
+
+                <div
+                    id="experienceCard"
+                    class="glass-card rounded-[2rem] border p-6 sm:p-8 lg:p-10"
+                >
+
+                    <div class="mb-8">
+
+                        <p class="section-kicker mb-3 text-sm font-black uppercase tracking-[0.2em]">
+                            Career
+                        </p>
+
+                        <h2
+                            id="experienceTitle"
+                            class="leading-tight"
+                        >
+                            Professional Highlights
+                        </h2>
+
+                    </div>
+
+                    <div class="grid gap-4">
+
+                        <!-- Timeline 1 -->
+                        <article class="timeline-item rounded-3xl border p-5">
+
+                            <div class="flex gap-4">
+
+                                <span
+                                    class="timeline-dot mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-black"
+                                >
+                                    1
+                                </span>
+
+                                <div>
+
+                                    <h3 class="font-black">
+                                        Leadership & Delivery
+                                    </h3>
+
+                                    <p
+                                        id="experienceOne"
+                                        class="mt-2 leading-7 opacity-75"
+                                    >
+                                        Led cross-functional initiatives with clarity and consistency.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <!-- Timeline 2 -->
+                        <article class="timeline-item rounded-3xl border p-5">
+
+                            <div class="flex gap-4">
+
+                                <span
+                                    class="timeline-dot mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-black"
+                                >
+                                    2
+                                </span>
+
+                                <div>
+
+                                    <h3 class="font-black">
+                                        Relationship Building
+                                    </h3>
+
+                                    <p
+                                        id="experienceTwo"
+                                        class="mt-2 leading-7 opacity-75"
+                                    >
+                                        Built strong stakeholder relationships across teams.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <!-- Timeline 3 -->
+                        <article class="timeline-item rounded-3xl border p-5">
+
+                            <div class="flex gap-4">
+
+                                <span
+                                    class="timeline-dot mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-black"
+                                >
+                                    3
+                                </span>
+
+                                <div>
+
+                                    <h3 class="font-black">
+                                        Detail-Focused Execution
+                                    </h3>
+
+                                    <p
+                                        id="experienceThree"
+                                        class="mt-2 leading-7 opacity-75"
+                                    >
+                                        Delivered organized, detail-focused work in fast-moving environments.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- CONTACT -->
+            <section
+                id="contact"
+                class="py-8"
+                aria-labelledby="contactTitle"
+            >
+
+                <div
+                    id="contactCard"
+                    class="reveal delay-5 rounded-[2rem] p-6 text-center shadow-2xl sm:p-8 lg:p-10"
+                >
+
+                    <p class="mb-3 text-sm font-black uppercase tracking-[0.2em] opacity-80">
+                        Contact
+                    </p>
+
+                    <h2
+                        id="contactTitle"
+                        class="leading-tight"
+                    >
+                        Let’s Connect
+                    </h2>
+
+                    <p
+                        id="contactText"
+                        class="mx-auto mt-4 max-w-2xl leading-8 opacity-85"
+                    >
+                        Available for collaborations, opportunities,
+                        and professional conversations.
+                    </p>
+
+                    <!-- Contact Buttons -->
+                    <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+
+                        <a
+                            id="linkedinButton"
+                            href="https://www.linkedin.com/in/stacy-nafula-50342a191/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="magnetic-button inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 font-extrabold shadow-xl focus:outline-none focus:ring-4"
+                        >
+                            <i data-lucide="linkedin" class="h-5 w-5"></i>
+
+                            <span id="linkedinText">
+                                LinkedIn Profile
+                            </span>
+                        </a>
+
+                        <a
+                            id="emailButton"
+                            href="mailto:s.stacyotwoma50@gmail.com"
+                            class="magnetic-button inline-flex items-center justify-center gap-2 rounded-full border px-6 py-4 font-extrabold focus:outline-none focus:ring-4"
+                        >
+                            <i data-lucide="send" class="h-5 w-5"></i>
+
+                            Email Stacy
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="relative z-10 mx-auto w-full max-w-7xl px-5 pb-8 text-center sm:px-8 lg:px-10">
+
+            <p
+                id="footerText"
+                class="text-sm font-semibold opacity-70"
+            >
+                Designed as a responsive portfolio for Stacy Nafula.
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const defaultConfig = {
+            background_color: "#10231C",
+            surface_color: "#F4EAD7",
+            text_color: "#FFF8EA",
+            primary_action_color: "#D7A84A",
+            secondary_action_color: "#4FB286",
+
+            font_family: "Manrope",
+            font_size: 16,
+
+            name_text: "Stacy Nafula",
+            role_text: "Digital Professional & Portfolio Specialist",
+
+            hero_summary:
+                "A polished professional portfolio designed to showcase Stacy’s expertise, achievements, and career story. Replace this summary with details from her LinkedIn profile.",
+
+            primary_button_text: "View Work",
+            secondary_button_text: "Contact Stacy",
+
+            about_title: "About Stacy",
+
+            about_text:
+                "This section is ready for Stacy’s real biography, career focus, and professional values. Add details from LinkedIn such as her industry, experience, education, certifications, and the kind of opportunities she is seeking.",
+
+            skills_title: "Core Strengths",
+
+            skill_one: "Project Coordination",
+            skill_two: "Communication",
+            skill_three: "Digital Strategy",
+
+            experience_title: "Professional Highlights",
+
+            experience_one:
+                "Led cross-functional initiatives with clarity and consistency.",
+
+            experience_two:
+                "Built strong stakeholder relationships across teams.",
+
+            experience_three:
+                "Delivered organized, detail-focused work in fast-moving environments.",
+
+            contact_title: "Let’s Connect",
+
+            contact_text:
+                "Available for collaborations, opportunities, and professional conversations.",
+
+            linkedin_text: "LinkedIn Profile"
+        };
+
+        const getValue = (config, key) =>
+            config[key] || defaultConfig[key];
+
+        function getInitials(name) {
+            return (
+                name
+                    .split(" ")
+                    .filter(Boolean)
+                    .slice(0, 2)
+                    .map(part => part.charAt(0).toUpperCase())
+                    .join("") || "SN"
+            );
+        }
+
+        function shadeHex(hex, amount) {
+            const clean = hex.replace("#", "");
+            const num = parseInt(clean, 16);
+
+            let r = (num >> 16) + amount;
+            let g = ((num >> 8) & 0x00FF) + amount;
+            let b = (num & 0x0000FF) + amount;
+
+            r = Math.max(Math.min(255, r), 0);
+            g = Math.max(Math.min(255, g), 0);
+            b = Math.max(Math.min(255, b), 0);
+
+            return (
+                "#" +
+                (b | (g << 8) | (r << 16))
+                    .toString(16)
+                    .padStart(6, "0")
+            );
+        }
+
+        async function onConfigChange(config) {
+
+            /* =========================
+               CONFIG VALUES
+            ========================= */
+
+            const background = getValue(config, "background_color");
+            const surface = getValue(config, "surface_color");
+            const text = getValue(config, "text_color");
+
+            const primary = getValue(config, "primary_action_color");
+            const secondary = getValue(config, "secondary_action_color");
+
+            const fontFamily = getValue(config, "font_family");
+            const baseSize = Number(getValue(config, "font_size")) || 16;
+
+            const displayFont =
+                `${fontFamily}, Manrope, sans-serif`;
+
+            const headingFont =
+                `${fontFamily}, Fraunces, serif`;
+
+            const nameText = getValue(config, "name_text");
+            const roleText = getValue(config, "role_text");
+
+            const initials = getInitials(nameText);
+
+            /* =========================
+               ROOT VARIABLES
+            ========================= */
+
+            document.documentElement.style.setProperty(
+                "--primary-action",
+                primary
+            );
+
+            document.documentElement.style.setProperty(
+                "--secondary-action",
+                secondary
+            );
+
+            /* =========================
+               APP STYLING
+            ========================= */
+
+            const app = document.getElementById("app");
+
+            app.style.background = `
+                radial-gradient(circle at 78% 12%, ${shadeHex(secondary, -30)} 0%, transparent 28%),
+                radial-gradient(circle at 18% 80%, ${shadeHex(primary, -45)} 0%, transparent 30%),
+                linear-gradient(135deg, ${background} 0%, ${shadeHex(background, -18)} 100%)
+            `;
+
+            app.style.color = text;
+            app.style.fontFamily = displayFont;
+
+            /* =========================
+               ORBS
+            ========================= */
+
+            document.getElementById("orbOne").style.background = primary;
+            document.getElementById("orbTwo").style.background = secondary;
+
+            /* =========================
+               BRAND
+            ========================= */
+
+            const brandInitials = document.getElementById("brandInitials");
+
+            brandInitials.textContent = initials;
+            brandInitials.style.backgroundColor = primary;
+            brandInitials.style.color = background;
+
+            const brandName = document.getElementById("brandName");
+
+            brandName.textContent = nameText;
+            brandName.style.color = text;
+
+            /* =========================
+               HERO
+            ========================= */
+
+            const heroTitle = document.getElementById("heroTitle");
+
+            heroTitle.textContent = nameText;
+            heroTitle.style.fontFamily = headingFont;
+            heroTitle.style.fontSize = `${baseSize * 4.2}px`;
+
+            const roleElement = document.getElementById("roleText");
+
+            roleElement.textContent = roleText;
+            roleElement.style.color = primary;
+            roleElement.style.fontSize = `${baseSize * 1.55}px`;
+
+            const heroSummary = document.getElementById("heroSummary");
+
+            heroSummary.textContent =
+                getValue(config, "hero_summary");
+
+            heroSummary.style.fontSize =
+                `${baseSize * 1.05}px`;
+
+            /* =========================
+               BUTTONS
+            ========================= */
+
+            document.getElementById("primaryButtonText").textContent =
+                getValue(config, "primary_button_text");
+
+            document.getElementById("secondaryButtonText").textContent =
+                getValue(config, "secondary_button_text");
+
+            const primaryButton =
+                document.getElementById("primaryButton");
+
+            primaryButton.style.backgroundColor = primary;
+            primaryButton.style.color = background;
+
+            primaryButton.style.boxShadow =
+                `0 18px 40px ${primary}44`;
+
+            const secondaryButton =
+                document.getElementById("secondaryButton");
+
+            secondaryButton.style.borderColor = `${surface}66`;
+            secondaryButton.style.color = text;
+            secondaryButton.style.backgroundColor = `${surface}18`;
+
+            /* =========================
+               EYEBROW
+            ========================= */
+
+            const eyebrowText =
+                document.getElementById("eyebrowText");
+
+            eyebrowText.style.backgroundColor = `${surface}22`;
+            eyebrowText.style.color = primary;
+
+            /* =========================
+               GLASS CARDS
+            ========================= */
+
+            document.querySelectorAll(".glass-card").forEach(card => {
+                card.style.backgroundColor = `${surface}16`;
+                card.style.borderColor = `${surface}35`;
+            });
+
+            /* =========================
+               MOBILE MENU
+            ========================= */
+
+            const mobileMenu =
+                document.getElementById("mobileMenu");
+
+            mobileMenu.style.backgroundColor = surface;
+            mobileMenu.style.color = background;
+
+            const menuButton =
+                document.getElementById("menuButton");
+
+            menuButton.style.backgroundColor = `${surface}22`;
+            menuButton.style.color = text;
+
+            document.querySelectorAll(".mobile-nav").forEach(link => {
+                link.style.backgroundColor = `${background}10`;
+            });
+
+            /* =========================
+               NAV LINKS
+            ========================= */
+
+            document.querySelectorAll(".nav-link").forEach(link => {
+                link.style.color = text;
+                link.style.fontSize = `${baseSize * 0.9}px`;
+            });
+
+            /* =========================
+               PROFILE CARD
+            ========================= */
+
+            document.getElementById("heroCard").style.color = text;
+
+            const portraitMark =
+                document.getElementById("portraitMark");
+
+            portraitMark.textContent = initials;
+            portraitMark.style.backgroundColor = surface;
+            portraitMark.style.color = background;
+
+            document.getElementById("cardName").textContent = nameText;
+
+            document.getElementById("cardName").style.fontSize =
+                `${baseSize * 1.45}px`;
+
+            document.getElementById("cardRole").textContent = roleText;
+
+            document.getElementById("cardRole").style.fontSize =
+                `${baseSize * 0.95}px`;
+
+            /* =========================
+               STAT CARDS
+            ========================= */
+
+            document.querySelectorAll(".stat-card").forEach(card => {
+                card.style.backgroundColor = `${surface}18`;
+            });
+
+            document.querySelectorAll(".stat-number").forEach(number => {
+                number.style.color = primary;
+                number.style.fontSize = `${baseSize * 1.5}px`;
+            });
+
+            document.querySelectorAll(".stat-label").forEach(label => {
+                label.style.fontSize = `${baseSize * 0.72}px`;
+            });
+
+            /* =========================
+               HEADINGS
+            ========================= */
+
+            const headingIds = [
+                "aboutTitle",
+                "skillsTitle",
+                "experienceTitle",
+                "contactTitle"
+            ];
+
+            headingIds.forEach(id => {
+
+                const el = document.getElementById(id);
+
+                el.style.fontFamily = headingFont;
+                el.style.fontSize = `${baseSize * 2.45}px`;
+                el.style.color = text;
+
+            });
+
+            /* =========================
+               ABOUT
+            ========================= */
+
+            document.getElementById("aboutTitle").textContent =
+                getValue(config, "about_title");
+
+            document.getElementById("aboutText").textContent =
+                getValue(config, "about_text");
+
+            document.getElementById("aboutText").style.fontSize =
+                `${baseSize * 1.05}px`;
+
+            /* =========================
+               SKILLS
+            ========================= */
+
+            document.getElementById("skillsTitle").textContent =
+                getValue(config, "skills_title");
+
+            document.getElementById("skillOne").textContent =
+                getValue(config, "skill_one");
+
+            document.getElementById("skillTwo").textContent =
+                getValue(config, "skill_two");
+
+            document.getElementById("skillThree").textContent =
+                getValue(config, "skill_three");
+
+            document.querySelectorAll(".skill-chip").forEach(card => {
+                card.style.color = text;
+            });
+
+            document.querySelectorAll(".skill-icon").forEach(icon => {
+                icon.style.backgroundColor = primary;
+                icon.style.color = background;
+            });
+
+            /* =========================
+               H3
+            ========================= */
+
+            document.querySelectorAll("h3").forEach(h3 => {
+                h3.style.fontSize = `${baseSize * 1.15}px`;
+            });
+
+            /* =========================
+               PARAGRAPHS
+            ========================= */
+
+            document.querySelectorAll("p").forEach(p => {
+
+                if (!p.id || !headingIds.includes(p.id)) {
+
+                    p.style.fontSize =
+                        p.className.includes("text-sm")
+                            ? `${baseSize * 0.85}px`
+                            : `${baseSize}px`;
+
+                }
+
+            });
+
+            /* =========================
+               EXPERIENCE
+            ========================= */
+
+            document.getElementById("experienceTitle").textContent =
+                getValue(config, "experience_title");
+
+            document.getElementById("experienceOne").textContent =
+                getValue(config, "experience_one");
+
+            document.getElementById("experienceTwo").textContent =
+                getValue(config, "experience_two");
+
+            document.getElementById("experienceThree").textContent =
+                getValue(config, "experience_three");
+
+            document.querySelectorAll(".timeline-item").forEach(item => {
+
+                item.style.backgroundColor = `${surface}12`;
+                item.style.borderColor = `${surface}28`;
+
+            });
+
+            document.querySelectorAll(".timeline-dot").forEach(dot => {
+
+                dot.style.backgroundColor = secondary;
+                dot.style.color = background;
+
+            });
+
+            /* =========================
+               CONTACT
+            ========================= */
+
+            const contactCard =
+                document.getElementById("contactCard");
+
+            contactCard.style.background =
+                `linear-gradient(135deg, ${primary} 0%, ${secondary} 100%)`;
+
+            contactCard.style.color = background;
+
+            document.getElementById("contactTitle").textContent =
+                getValue(config, "contact_title");
+
+            document.getElementById("contactTitle").style.color =
+                background;
+
+            document.getElementById("contactText").textContent =
+                getValue(config, "contact_text");
+
+            document.getElementById("contactText").style.fontSize =
+                `${baseSize * 1.05}px`;
+
+            document.getElementById("linkedinText").textContent =
+                getValue(config, "linkedin_text");
+
+            const linkedinButton =
+                document.getElementById("linkedinButton");
+
+            linkedinButton.style.backgroundColor = background;
+            linkedinButton.style.color = text;
+
+            const emailButton =
+                document.getElementById("emailButton");
+
+            emailButton.style.borderColor = `${background}55`;
+
+            emailButton.style.color = background;
+
+            emailButton.style.backgroundColor = `${surface}44`;
+
+            /* =========================
+               FOOTER
+            ========================= */
+
+            document.getElementById("footerText").style.color = text;
+
+            document.getElementById("footerText").style.fontSize =
+                `${baseSize * 0.85}px`;
+
+            /* =========================
+               ACCESSIBILITY
+            ========================= */
+
+            document.querySelectorAll("a, button").forEach(el => {
+                el.style.outlineColor = secondary;
+            });
+
+            /* =========================
+               ICONS
+            ========================= */
+
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        }
+
+        /* =========================
+           SDK CAPABILITIES
+        ========================= */
+
+        function mapToCapabilities(config) {
+
+            return {
+
+                recolorables: [
+                    {
+                        get: () =>
+                            config.background_color ||
+                            defaultConfig.background_color,
+
+                        set: value => {
+                            config.background_color = value;
+
+                            window.elementSdk.setConfig({
+                                background_color: value
+                            });
+                        }
+                    },
+
+                    {
+                        get: () =>
+                            config.surface_color ||
+                            defaultConfig.surface_color,
+
+                        set: value => {
+                            config.surface_color = value;
+
+                            window.elementSdk.setConfig({
+                                surface_color: value
+                            });
+                        }
+                    },
+
+                    {
+                        get: () =>
+                            config.text_color ||
+                            defaultConfig.text_color,
+
+                        set: value => {
+                            config.text_color = value;
+
+                            window.elementSdk.setConfig({
+                                text_color: value
+                            });
+                        }
+                    },
+
+                    {
+                        get: () =>
+                            config.primary_action_color ||
+                            defaultConfig.primary_action_color,
+
+                        set: value => {
+                            config.primary_action_color = value;
+
+                            window.elementSdk.setConfig({
+                                primary_action_color: value
+                            });
+                        }
+                    },
+
+                    {
+                        get: () =>
+                            config.secondary_action_color ||
+                            defaultConfig.secondary_action_color,
+
+                        set: value => {
+                            config.secondary_action_color = value;
+
+                            window.elementSdk.setConfig({
+                                secondary_action_color: value
+                            });
+                        }
+                    }
+                ],
+
+                borderables: [],
+
+                fontEditable: {
+                    get: () =>
+                        config.font_family ||
+                        defaultConfig.font_family,
+
+                    set: value => {
+
+                        config.font_family = value;
+
+                        window.elementSdk.setConfig({
+                            font_family: value
+                        });
+
+                    }
+                },
+
+                fontSizeable: {
+                    get: () =>
+                        config.font_size ||
+                        defaultConfig.font_size,
+
+                    set: value => {
+
+                        config.font_size = value;
+
+                        window.elementSdk.setConfig({
+                            font_size: value
+                        });
+
+                    }
+                }
+
+            };
+
+        }
+
+        /* =========================
+           EDIT PANEL
+        ========================= */
+
+        function mapToEditPanelValues(config) {
+
+            return new Map([
+
+                ["name_text", getValue(config, "name_text")],
+                ["role_text", getValue(config, "role_text")],
+
+                ["hero_summary", getValue(config, "hero_summary")],
+
+                ["primary_button_text", getValue(config, "primary_button_text")],
+                ["secondary_button_text", getValue(config, "secondary_button_text")],
+
+                ["about_title", getValue(config, "about_title")],
+                ["about_text", getValue(config, "about_text")],
+
+                ["skills_title", getValue(config, "skills_title")],
+
+                ["skill_one", getValue(config, "skill_one")],
+                ["skill_two", getValue(config, "skill_two")],
+                ["skill_three", getValue(config, "skill_three")],
+
+                ["experience_title", getValue(config, "experience_title")],
+
+                ["experience_one", getValue(config, "experience_one")],
+                ["experience_two", getValue(config, "experience_two")],
+                ["experience_three", getValue(config, "experience_three")],
+
+                ["contact_title", getValue(config, "contact_title")],
+                ["contact_text", getValue(config, "contact_text")],
+
+                ["linkedin_text", getValue(config, "linkedin_text")]
+
+            ]);
+
+        }
+
+        /* =========================
+           MOBILE MENU TOGGLE
+        ========================= */
+
+        document.getElementById("menuButton")
+            .addEventListener("click", () => {
+
+                const menu =
+                    document.getElementById("mobileMenu");
+
+                const button =
+                    document.getElementById("menuButton");
+
+                const isOpen =
+                    !menu.classList.contains("hidden");
+
+                menu.classList.toggle("hidden");
+
+                button.setAttribute(
+                    "aria-expanded",
+                    String(!isOpen)
+                );
+
+                button.innerHTML = isOpen
+                    ? '<i data-lucide="menu" class="h-5 w-5"></i>'
+                    : '<i data-lucide="x" class="h-5 w-5"></i>';
+
+                if (window.lucide) {
+                    lucide.createIcons();
+                }
+
+            });
+
+        /* =========================
+           MOBILE NAV CLOSE
+        ========================= */
+
+        document.querySelectorAll("#mobileMenu a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    const menu =
+                        document.getElementById("mobileMenu");
+
+                    const button =
+                        document.getElementById("menuButton");
+
+                    menu.classList.add("hidden");
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    button.innerHTML =
+                        '<i data-lucide="menu" class="h-5 w-5"></i>';
+
+                    if (window.lucide) {
+                        lucide.createIcons();
+                    }
+
+                });
+
+            });
+
+        /* =========================
+           SDK INIT
+        ========================= */
+
+        if (window.elementSdk) {
+
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+
+        } else {
+
+            onConfigChange(defaultConfig);
+
+        }
+
+        /* =========================
+           ICONS INIT
+        ========================= */
+
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    </script>
+
+    <!-- CLOUDFLARE -->
+    <script>
+        (function () {
+
+            function c() {
+
+                var b =
+                    a.contentDocument ||
+                    a.contentWindow.document;
+
+                if (b) {
+
+                    var d = b.createElement('script');
+
+                    d.innerHTML =
+                        "window.__CF$cv$params={r:'9fb75af28594af03',t:'MTc3ODczNDk5NS4wMDAwMDA='};" +
+                        "var a=document.createElement('script');" +
+                        "a.nonce='';" +
+                        "a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';" +
+                        "document.getElementsByTagName('head')[0].appendChild(a);";
+
+                    b.getElementsByTagName('head')[0].appendChild(d);
+
+                }
+
+            }
+
+            if (document.body) {
+
+                var a = document.createElement('iframe');
+
+                a.height = 1;
+                a.width = 1;
+
+                a.style.position = 'absolute';
+                a.style.top = 0;
+                a.style.left = 0;
+                a.style.border = 'none';
+                a.style.visibility = 'hidden';
+
+                document.body.appendChild(a);
+
+                if ('loading' !== document.readyState) {
+
+                    c();
+
+                } else if (window.addEventListener) {
+
+                    document.addEventListener('DOMContentLoaded', c);
+
+                } else {
+
+                    var e =
+                        document.onreadystatechange ||
+                        function () {};
+
+                    document.onreadystatechange = function (b) {
+
+                        e(b);
+
+                        'loading' !== document.readyState &&
+                            (
+                                document.onreadystatechange = e,
+                                c()
+                            );
+
+                    };
+
+                }
+
+            }
+
+        })();
+    </script>
+
+</body>
+</html>
